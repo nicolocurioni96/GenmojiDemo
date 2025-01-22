@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State private var text = ""
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            CustomTextEditor(text: $text)
         }
         .padding()
     }
