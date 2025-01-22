@@ -9,12 +9,12 @@ import SwiftUI
 
 struct CustomTextEditor: UIViewRepresentable {
     
-    @Binding var text: String
+    @Binding var text: NSAttributedString?
     
     func makeUIView(context: Context) -> UITextView {
         // We are designing our own TextView and passing the text to it
         let textView = UITextView()
-        textView.text = text
+        textView.attributedText = text
         
         // Now, we make the textView editable and add some customization, such as changing the font
         textView.isEditable = true
@@ -27,8 +27,8 @@ struct CustomTextEditor: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
-        if text != uiView.text {
-            uiView.text = text
+        if text != uiView.attributedText {
+            uiView.attributedText = text
         }
     }
 }
