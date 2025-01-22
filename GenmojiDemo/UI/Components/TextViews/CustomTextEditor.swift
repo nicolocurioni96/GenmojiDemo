@@ -16,6 +16,9 @@ struct CustomTextEditor: UIViewRepresentable {
         let textView = UITextView()
         textView.attributedText = text
         
+        // We can now enable the Copy/Paste feature for Genmoji from the edit menu of our UITextView.
+        textView.allowsEditingTextAttributes = true
+        
         // Now, we make the textView editable and add some customization, such as changing the font
         textView.isEditable = true
         textView.font = .systemFont(ofSize: 30)
